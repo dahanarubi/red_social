@@ -1,0 +1,321 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f6fcfc; /* fondo super suave */
+  color: #2e4f4f;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: #e0f2f1; /* aqua pastel */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  padding-top: 80px; /* para que no choque con la topbar */
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+/* Texto pequeño V I T arriba del sidebar */
+.sidebar-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: #4db6ac;
+  padding-left: 18px;
+  padding-bottom: 14px;
+  letter-spacing: 0.25em;
+  user-select: none;
+  border-bottom: 1px solid #b2dfdb;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar ul li {
+  margin-left: 10px;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: #3a7d77;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+  background-color: #b2dfdb;
+  color: #1b4332;
+}
+
+.sidebar ul li a .icon {
+  font-size: 1.6rem;
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustar el contenido principal para que no quede debajo del sidebar */
+main {
+  margin-left: 240px; /* deja espacio para sidebar + un poco de margen */
+  transition: margin-left 0.3s ease;
+}
+
+/* Ajusta también el header topbar para que empiece después del sidebar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 220px;
+  width: calc(100% - 220px);
+  background-color: #e0f2f1; /* aqua pastel clarito */
+  display: flex;
+  align-items: center;
+  padding: 14px 15px 14px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: 999;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espacio entre logo y texto */
+  margin-left: 0;
+}
+
+/* Logo SVG */
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  stroke: #4db6ac;
+}
+
+/* Texto logo */
+.logo-text {
+  font-weight: 300; /* más delgado */
+  font-size: 2.5rem;
+  letter-spacing: 1.2rem; /* mucho espacio */
+  color: #4db6ac; /* color pastel verde agua */
+  user-select: none;
+  margin-left: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Feed */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Post */
+.post {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+  padding: 22px 20px;
+  transition: box-shadow 0.25s ease;
+}
+
+.post:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Post header */
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #6b8e8b;
+}
+
+.username {
+  color: #3a7d77;
+}
+
+.text {
+  font-size: 1.1rem;
+  color: #23544f;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+/* Imágenes grid */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.images-grid img {
+  width: 100%;
+  height: 125px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.images-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Botones de acción */
+.post-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.post-actions button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #3a7d77;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.post-actions button:hover {
+  background-color: #b2dfdb;
+
+}
+
+/* Responsive: para pantallas chicas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebar ul li a .text {
+    display: none;
+  }
+
+  main {
+    margin-left: 70px;
+  }
+
+  .topbar {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 600px) {
+  .images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  .images-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-header {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+  padding: 24px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  border: 3px solid #4db6ac;
+}
+
+.username {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #23544f;
+  margin-bottom: 12px;
+}
+
+.follow-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-weight: 600;
+  color: #3a7d77;
+  font-size: 1.1rem;
+}
+
+.follow-info div strong {
+  color: #4db6ac;
+  font-weight: 700;
+}
+
+/* Post con imagen única: mostrar en grande sin recorte */
+.images-grid.single {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.images-grid.single img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.images-grid.single img:hover {
+  transform: scale(1.03);
+}
